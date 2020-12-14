@@ -3,6 +3,7 @@ package components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -10,9 +11,10 @@ public class EditForm {
     public static By nameField= By.id("viewName");
     public static By selectAll= By.id("dbox_select_all");
     public static By deselectAll= By.id("dbox_de_select_all");
+    public static By selectedCol = By.id("selectedColumns");
     public static List<By> selectColumns(List<String> list) {
         ListIterator<String> Iterator = list.listIterator ();
-        List<By> xpaths = null;
+        List<By> xpaths=new ArrayList<By> ();
 
         while (Iterator.hasNext ()) {
 
@@ -22,5 +24,12 @@ public class EditForm {
         }
         return xpaths;
     }
+
+    public static By filterColumn = By.id("filterColumns");
+    public static By filterIncludes = By.id("filterOperator");
+    public static By filterValue = By.cssSelector ("input#stringValue1");
+    public static By filterValueNum = By.cssSelector ("input#numericValue1.valid");
+    public static By saveButton = By.xpath("//button[contains(.,'Save')]");
+    public static By AddButton = By.id("addFilterRow");
     //public static By destination
 }

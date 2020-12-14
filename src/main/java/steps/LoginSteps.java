@@ -5,6 +5,8 @@ import constants.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class LoginSteps {
     public static WebDriver driver;
 
@@ -23,6 +25,8 @@ public class LoginSteps {
        driver.findElement(LoginPage.password).clear();
        driver.findElement(LoginPage.password).sendKeys(Constants.password);
        driver.findElement(LoginPage.loginButton).click();
+      // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+       //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
    }
 
 }

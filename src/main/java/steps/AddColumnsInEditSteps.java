@@ -1,20 +1,20 @@
 package steps;
 
 import components.EditForm;
-import components.OpenEditView;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import utils.StringToList;
 
 import java.util.List;
 import java.util.ListIterator;
 
-public class OpenEditViewSteps {
+public class AddColumnsInEditSteps {
     public WebDriver driver;
 
-    public OpenEditViewSteps (WebDriver driver)
+    public AddColumnsInEditSteps (WebDriver driver)
     {
         this.driver= driver;
     }
@@ -26,7 +26,7 @@ public class OpenEditViewSteps {
        List<By> list= EditForm.selectColumns (list1);
         Actions action = new Actions (driver);
         ListIterator iterator= list.listIterator ();
-        WebElement destination= driver.findElement (EditForm.destination);
+        WebElement destination= driver.findElement (EditForm.selectedCol);
         while(iterator.hasNext ())
         {
             WebElement source= driver.findElement((By) iterator.next());
@@ -37,6 +37,15 @@ public class OpenEditViewSteps {
                     .build();
             dragAndDrop.perform ();
         }
+
+    }
+
+    public void addColumns(String s)
+    {
+       System.out.println (s);
+       driver.findElement (EditForm.deselectAll).click();
+        dragAndDrop (StringToList.stringToList (s));
+
 
     }
 

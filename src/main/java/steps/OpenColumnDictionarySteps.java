@@ -14,9 +14,7 @@ public class OpenColumnDictionarySteps {
 
     public void open()
     {
-        System.out.print ("bbbbbb");
         driver.findElement (SideNavigationBar.DataCatalogSelect).click ();
         driver.findElement (SideNavigationBar.columnViewButton).click ();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 }

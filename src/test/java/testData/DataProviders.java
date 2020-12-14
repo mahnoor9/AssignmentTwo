@@ -1,30 +1,27 @@
 package testData;
 
 import org.testng.annotations.DataProvider;
+import utils.DataFromExcelSheet;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class DataProviders {
 
     @DataProvider(name = "DataForEditForm")
-    public static Iterator<Object[]> GetData (Method method) {
+    public static Iterator<Object[]> GetData () throws Exception {
 
-        List<Map<String,String>> lom = new ArrayList<Map<String,String>> ();
+        List<Map<String,String>> lom = DataFromExcelSheet.readFromSheet ("src/test/java/testData/Book1.xlsx","Sheet1");
 
-        switch ((method.getName ())) {
-            case "TestOne": {
+      //  switch ((method.getName ())) {
+        //    case "Test": {
 
-            }
-            case "TestTwo": {
+                Collection<Object[]> data = new ArrayList<Object[]> ();
+                lom.forEach(item -> data.add(new Object[]{item}));
+                return data.iterator ();
 
-            }
-            case "TestThree": {
 
-            }
-        }
+
+
     }
 }

@@ -12,7 +12,7 @@ public class BrowserGetter {
 
 
     public WebDriver getWinChromeDriver () {
-        setProperty ("webdriver.chrome.driver", "src/test/resources/chromedriver1.exe");
+        setProperty ("webdriver.chrome.driver", "C:\\Users\\dell\\IdeaProjects\\AssignmentTwo\\src\\test\\java\\resources\\chromedriver1.exe");
         WebDriver driver = new ChromeDriver ();
         driver.manage ().window ().maximize ();
         return driver;

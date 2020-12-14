@@ -1,6 +1,6 @@
 package steps;
 
-import components.OpenEditView;
+import components.DasboardColView;
 import org.openqa.selenium.WebDriver;
 
 public class GotoEditSteps {
@@ -13,8 +13,9 @@ public class GotoEditSteps {
 
     public void openEditView()
     {
-        driver.findElement (OpenEditView.viewAll).click ();
-        driver.findElement (OpenEditView.selectSpecific).click ();
-        driver.findElement (OpenEditView.editViewButton).click ();
+        driver.findElement (DasboardColView.viewAll).click ();
+        driver.findElement (DasboardColView.selectSpecific).click ();
+        driver.findElement (DasboardColView.options).click ();
+        driver.findElement (DasboardColView.editViewButton).click ();
     }
 }

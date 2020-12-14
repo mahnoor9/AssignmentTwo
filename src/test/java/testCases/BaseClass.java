@@ -23,16 +23,11 @@ public class BaseClass {
 
     @BeforeClass(alwaysRun = true)
     public void setUp()  {
-        String s = "a,b,c,d,e,f,g";
-        String[] result= SplitStringWithComma.splitString (s);
-        for(int i = 0; i< result.length;i++)
-        {
-            System.out.print (result[i]);
-        }
         driver= BrowserGetter.getChromeDriver();
+        System.out.println ("get it");
         LoginSteps loginSteps = new LoginSteps (driver);
         loginSteps.login ();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @AfterClass(alwaysRun = true)
