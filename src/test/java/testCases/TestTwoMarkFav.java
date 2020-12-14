@@ -3,15 +3,18 @@ package testCases;
 import org.testng.annotations.Test;
 import questions.IsFavouriteMarked;
 import steps.MarkAsFavSteps;
+import testData.DataProviders;
+
+import java.util.Map;
 
 public class TestTwoMarkFav extends BaseClass{
 
-    @Test
-    public void test()
+    @Test  (dataProvider = "DataForEditForm", dataProviderClass = DataProviders.class)
+    public void test(Map<String, String> sheet)
     {
 
             MarkAsFavSteps markAsFavSteps = new MarkAsFavSteps (driver);
-            markAsFavSteps.MarkFavstep ("Test_Cloned_Edited");
+            markAsFavSteps.MarkFavstep (sheet.get ("ToMarkFav"));
 
     }
 }
