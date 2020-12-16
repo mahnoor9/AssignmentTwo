@@ -11,7 +11,6 @@ public class StringToList {
         for(int i= 0;i<= split.length-1;i++)
         {
             list.add (split[i]);
-            System.out.println (list.get(i));
 
         }
         return list;

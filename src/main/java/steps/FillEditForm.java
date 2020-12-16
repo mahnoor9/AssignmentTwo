@@ -2,6 +2,8 @@ package steps;
 
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class FillEditForm {
 
     WebDriver driver;
@@ -17,9 +19,10 @@ public class FillEditForm {
         AddColumnsInEditSteps addColumnsInEditStepss = new AddColumnsInEditSteps (driver);
         addColumnsInEditStepss.addColumns (selectedColumn);
        AddFiltersSteps addFiltersSteps = new AddFiltersSteps (driver);
-       addFiltersSteps.AddFilters (filterName,filterCriteria,filterValue);
+      // addFiltersSteps.AddFilters (filterName,filterCriteria,filterValue);
         SaveChangingsSteps saveChangingsSteps= new SaveChangingsSteps (driver);
         saveChangingsSteps.save ();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
     }
 }

@@ -1,9 +1,8 @@
-package testData;
+package TestData;
 
 import org.testng.annotations.DataProvider;
 import utils.DataFromExcelSheet;
 
-import java.lang.reflect.Method;
 import java.util.*;
 
 public class DataProviders {

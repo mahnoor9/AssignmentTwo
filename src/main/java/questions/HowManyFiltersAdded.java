@@ -22,6 +22,7 @@ public class HowManyFiltersAdded {
 
     public List<String> numberOfAddedFilters(String nameOfView) {
 
+
         List<String> result= new ArrayList<> ();
         List<WebElement> list = driver.findElements (By.cssSelector ("div.ag-cell.ag-cell-not-inline-editing.ag-cell-with-height.ag-cell-value"));
         ListIterator<WebElement> it= list.listIterator ();

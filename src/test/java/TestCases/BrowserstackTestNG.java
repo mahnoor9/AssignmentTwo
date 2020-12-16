@@ -1,4 +1,4 @@
-package testCases;
+package TestCases;
 
 import constants.Constants;
 import org.openqa.selenium.*;

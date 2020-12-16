@@ -1,16 +1,12 @@
-package testCases;
+package TestCases;
 
-import components.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import steps.LoginSteps;
 import utils.BrowserGetter;
-import utils.BrowserWait;
-import utils.SplitStringWithComma;
 
 import java.util.concurrent.TimeUnit;
 
