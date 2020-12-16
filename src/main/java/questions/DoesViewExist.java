@@ -19,18 +19,12 @@ public class DoesViewExist {
     {
         driver.findElement (DasboardColView.viewAll);
         DoesElementExist doesElementExist = new DoesElementExist (driver);
+       if( doesElementExist.isElementPresent (DasboardColView.listOfView (name)) == true)
+       {
+           return true;
+       }
+       else
+           return false;
 
-        IsFavouriteMarked isFavouriteMarked = new IsFavouriteMarked (driver);
-        if(isFavouriteMarked.checkIfFav (name)==false)
-        {
-            if (doesElementExist.isElementPresent (MarkFav.CreatedByMeList (name)));
-            {
-                return true;
-            }
-        }
-        else
-        {
-            return false;
-        }
     }
 }

@@ -13,6 +13,4 @@ public class MarkFav {
         return By.xpath ("//*[@id=\"viewsCreatedByme\"]/li[contains(., '"+s+"')]");
     }
 
-
-    public static By viewAll= By.xpath("//*[@id=\"selectedView\"]");
 }

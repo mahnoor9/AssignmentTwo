@@ -27,9 +27,11 @@ public class EditForm {
 
     public static By filterColumn = By.id("filterColumns");
     public static By filterIncludes = By.id("filterOperator");
-    public static By filterValue = By.cssSelector ("input#stringValue1");
+    public static By filterValue = By.xpath ("//div[@id='valueList_chosen']//input[contains(@class,'chosen-search-input')]");
     public static By filterValueNum = By.cssSelector ("input#numericValue1.valid");
     public static By saveButton = By.xpath("//button[contains(.,'Save')]");
     public static By AddButton = By.id("addFilterRow");
+    public static By searchChoiceClose= By.xpath("//a[@class='search-choice-close']");
+    public static By searchChoice = By.xpath("//li[@class='search-choice']");
     //public static By destination
 }

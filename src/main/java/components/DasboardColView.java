@@ -10,4 +10,9 @@ public class DasboardColView {
     public static By deleteButton = By.id ("deleteViewBtn");
     public static By colAddedText= By.xpath("//*[@ref=\"eText\"]");
 
+    public static By listOfView (String name)
+    {
+        return By.xpath("//ul[contains(@class,\"sub-list\")]//li[normalize-space()=\""+name+"\"]"); }
+
+
 }

@@ -1,5 +1,6 @@
 package questions;
 
+import components.DasboardColView;
 import components.MarkFav;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -18,7 +19,7 @@ public class IsFavouriteMarked {
     public boolean checkIfFav(String s)
     {
         DoesElementExist doesElementExist = new DoesElementExist (driver);
-        driver.findElement (MarkFav.viewAll);
+        driver.findElement (DasboardColView.viewAll);
         if(doesElementExist.isElementPresent (MarkFav.favList (s)) == true)
         {
             System.out.println ("It is already fav");

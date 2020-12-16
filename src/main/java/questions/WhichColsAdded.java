@@ -30,8 +30,8 @@ public class WhichColsAdded {
             expectedCol.add (iterator.next ().getText ());
         }
         }
-      // expectedCol.forEach(e -> expectedCol.set(expectedCol.indexOf(e),e.trim()));
-       // expectedCol.stream().map(e -> expectedCol.set(expectedCol.it.trim()));
+        expectedCol.remove (0);
+        expectedCol.sort (String.CASE_INSENSITIVE_ORDER);
         return expectedCol;
     }
 }

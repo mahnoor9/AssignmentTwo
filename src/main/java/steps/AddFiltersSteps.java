@@ -22,39 +22,15 @@ public class AddFiltersSteps {
 
     public void AddFilters(String filterName, String criteria, String value)
     {
-        DoesElementExist doesElementExist = new DoesElementExist (driver);
-            List<String> filterNames= StringToList.stringToList (filterName);
-            List<String> Criterias= StringToList.stringToList (criteria);
-            List<String> filterValues= StringToList.stringToList (value);
-            ListIterator<String> i=  filterNames.listIterator ();
-            int v=0;
-            while(i.hasNext ())
-            {
-
-                driver.findElement(EditForm.filterColumn).click();
-                new Select (driver.findElement(EditForm.filterColumn)).selectByVisibleText(filterNames.get (0));
-                driver.findElement(EditForm.filterIncludes).click();
-                new Select(driver.findElement(EditForm.filterIncludes)).selectByVisibleText(Criterias.get (0));
-             /*   if(doesElementExist.isElementPresent (By.name("numericValue1")))
-                {
-                driver.findElement(By.name("numericValue1")).click();
-                driver.findElement(EditForm.filterValue).sendKeys("12345");
-                }
-                if(doesElementExist.isElementPresent (By.name("stringValue1")))
-                {
-                    driver.findElement(By.name("stringValue1")).click();
-                    driver.findElement(EditForm.filterValue).sendKeys("wewe");
-                } */
-                if(i.hasNext ())
-                {
-                    BrowserWait addWait= new BrowserWait ();
-                    addWait.wait(driver).until(ExpectedConditions.elementToBeClickable(EditForm.AddButton)).click();
-
-                }
-                v++;
-            }
-
-
+        List<String> filterNames= StringToList.stringToList (filterName);
+        List<String> Criterias= StringToList.stringToList (criteria);
+        List<String> filterValues= StringToList.stringToList (value);
+        for (int i= 0; i< filterNames.size (); i++ ) {
+            AddOneFilter addOneFilter = new AddOneFilter (driver);
+            addOneFilter.addFilter (filterNames.get (i), Criterias.get(i), filterValues.get (i));
+            BrowserWait addWait= new BrowserWait ();
+            addWait.wait(driver).until(ExpectedConditions.elementToBeClickable(EditForm.AddButton)).click();
+        }
 
     }
 }

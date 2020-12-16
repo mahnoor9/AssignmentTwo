@@ -8,7 +8,7 @@ import testData.DataProviders;
 
 import java.util.Map;
 
-public class TestDelete extends BaseClass {
+public class TestThreeDelete extends BaseClass {
 
     @Test (dataProvider = "DataForEditForm", dataProviderClass = DataProviders.class)
     public void test(Map<String, String> sheet)

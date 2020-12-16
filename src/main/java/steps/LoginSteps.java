@@ -17,7 +17,6 @@ public class LoginSteps {
 
    public void login()
    {
-       System.out.print ("aaaaaaaa");
        driver.get(Constants.URL);
        driver.findElement(LoginPage.email).click();;
        driver.findElement(LoginPage.email).sendKeys(Constants.email);

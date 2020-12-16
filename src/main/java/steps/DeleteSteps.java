@@ -1,5 +1,6 @@
 package steps;
 
+import components.DasboardColView;
 import components.DeleteView;
 import components.MarkFav;
 import org.openqa.selenium.WebDriver;
@@ -16,25 +17,11 @@ public class DeleteSteps {
 
     public void DeleteView(String name)
     {
-        DoesViewExist doesViewExist = new DoesViewExist (driver);
-
-        if(doesViewExist.exist (name)==true)
-        {
-            driver.findElement (MarkFav.viewAll);
-            IsFavouriteMarked isFavouriteMarked = new IsFavouriteMarked (driver);
-            if( isFavouriteMarked.checkIfFav (name) == false) {
-                driver.findElement (MarkFav.CreatedByMeList (name)).click ();
+                driver.findElement (DasboardColView.viewAll);
+                driver.findElement (DasboardColView.listOfView (name)).click ();
                 driver.findElement (DeleteView.deleteButton).click ();
                 driver.findElement (DeleteView.yesButton).click ();
-            }
-            else
-            {
-                driver.findElement (MarkFav.favList (name)).click ();
-                driver.findElement (DeleteView.deleteButton).click ();
-                driver.findElement (DeleteView.yesButton).click ();
-
-            }
         }
 
-    }
+
 }

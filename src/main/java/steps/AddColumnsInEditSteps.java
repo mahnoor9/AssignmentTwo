@@ -21,31 +21,14 @@ public class AddColumnsInEditSteps {
 
 
 
-    public void dragAndDrop(List<String> list1)
-    {
-       List<By> list= EditForm.selectColumns (list1);
-        Actions action = new Actions (driver);
-        ListIterator iterator= list.listIterator ();
-        WebElement destination= driver.findElement (EditForm.selectedCol);
-        while(iterator.hasNext ())
-        {
-            WebElement source= driver.findElement((By) iterator.next());
-           // action.dragAndDrop(source,destination).build().perform();
-            Action dragAndDrop = action.clickAndHold(source)
-                    .moveToElement(destination)
-                    .release(destination)
-                    .build();
-            dragAndDrop.perform ();
-        }
 
-    }
 
-    public void addColumns(String s)
+    public void addColumns(String columns)
     {
-       System.out.println (s);
+       System.out.println (columns);
        driver.findElement (EditForm.deselectAll).click();
-        dragAndDrop (StringToList.stringToList (s));
-
+       DragAndDrop dragAndDrop = new DragAndDrop (driver);
+       dragAndDrop.dragAndDropCol (StringToList.stringToList (columns));
 
     }
 

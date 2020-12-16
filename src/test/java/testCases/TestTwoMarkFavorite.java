@@ -7,7 +7,7 @@ import testData.DataProviders;
 
 import java.util.Map;
 
-public class TestTwoMarkFav extends BaseClass{
+public class TestTwoMarkFavorite extends BaseClass{
 
     @Test  (dataProvider = "DataForEditForm", dataProviderClass = DataProviders.class)
     public void test(Map<String, String> sheet)

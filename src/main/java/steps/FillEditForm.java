@@ -11,10 +11,9 @@ public class FillEditForm {
         this.driver= driver;
     }
 
-    public void addThings(String selectedColumn, String filterName, String filterCriteria, String filterValue)
+    public void FillForm(String selectedColumn, String filterName, String filterCriteria, String filterValue)
     {
-        GotoEditSteps gotoEditSteps= new GotoEditSteps (driver);
-        gotoEditSteps.openEditView ();
+
         AddColumnsInEditSteps addColumnsInEditStepss = new AddColumnsInEditSteps (driver);
         addColumnsInEditStepss.addColumns (selectedColumn);
        AddFiltersSteps addFiltersSteps = new AddFiltersSteps (driver);

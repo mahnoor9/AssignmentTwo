@@ -1,5 +1,6 @@
 package steps;
 
+import components.DasboardColView;
 import components.MarkFav;
 import org.openqa.selenium.WebDriver;
 import questions.IsFavouriteMarked;
@@ -11,17 +12,10 @@ public class MarkAsFavSteps {
     {
         this.driver = driver;
     }
-    public void MarkFavstep(String s)
+    public void MarkFavstep(String name)
     {
-        IsFavouriteMarked isFavouriteMarked = new IsFavouriteMarked (driver);
-        if( isFavouriteMarked.checkIfFav (s) == false) {
-            driver.findElement (MarkFav.viewAll);
-            driver.findElement (MarkFav.CreatedByMeList (s)).click ();
+            driver.findElement (DasboardColView.viewAll);
+            driver.findElement (DasboardColView.listOfView (name)).click ();
             driver.findElement (MarkFav.favButton).click ();
         }
-        else
-        {
-            System.out.println ("Already Marked as fav");
-        }
-    }
 }

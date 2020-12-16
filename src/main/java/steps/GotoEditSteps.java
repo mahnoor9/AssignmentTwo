@@ -11,10 +11,11 @@ public class GotoEditSteps {
         this.driver= driver;
     }
 
-    public void openEditView()
+    public void openEditView(String name)
     {
+
         driver.findElement (DasboardColView.viewAll).click ();
-        driver.findElement (DasboardColView.selectSpecific).click ();
+        driver.findElement (DasboardColView.listOfView (name));
         driver.findElement (DasboardColView.options).click ();
         driver.findElement (DasboardColView.editViewButton).click ();
     }
